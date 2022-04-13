@@ -24,6 +24,7 @@ pipeline {
         }
 
       }
+      when { triggeredBy 'SCMTrigger' }
     }
     stage('World') {
       steps {
