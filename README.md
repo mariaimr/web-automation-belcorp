@@ -2,4 +2,4 @@
 
 Web automation with serenity BDD, screenplay y cucumber.
 
-testing an automatic trigger to jenkins 
+testing an automatic trigger 
