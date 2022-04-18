@@ -1,5 +1,4 @@
 node {
-
   job('Run only when PR is open'){
 	 scm {
         git {
@@ -41,6 +40,7 @@ node {
     }
  }
     stage('Hello') {
+	  cleanWs()  
           echo 'Hello'
 	  echo env.BRANCH_NAME
           echo "${currentBuild.getBuildCauses()}" //Always returns full Cause
