@@ -39,10 +39,15 @@ node {
         }
     }
  }
+	stage('Checkout') {
+		cleanWs()
+		checkout scm
+	}
+            
     stage('Hello') {
 	  cleanWs()  
           echo 'Hello'
-	  echo env.BRANCH_NAME
+	  sh 'echo env.BRANCH_NAME'
           echo "${currentBuild.getBuildCauses()}" //Always returns full Cause
           echo "${currentBuild.getBuildCauses('jenkins.branch.BranchEventCause')}" // Only returns for branch events
           echo "${currentBuild.getBuildCauses('hudson.triggers.SCMTrigger$SCMTriggerCause')}" // Only returns SCM Trigger
