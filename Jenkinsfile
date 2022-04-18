@@ -39,6 +39,11 @@ node {
         }
     }
  }
+	stage('Checkout') {
+		cleanWs()
+		checkout scm
+	}
+            
     stage('Hello') {
 	  cleanWs()  
           echo 'Hello'
